@@ -31,9 +31,14 @@ def render_public(ships: list[list[int]], shots: list[list[bool]]) -> str:
                     shots[i][idx] = "V"
                 else:
                     shots[i][idx] = "O"
-    return f""" {ships}
-                {shots}"""
+    return f"{shots}"
 
+def render_reveal(ships: list[list[int]], shots: list[list[bool]]) -> str:
+    return f"{ships}"
 
-
-
+# x = create_matrix(6)
+# y = create_bool_matrix(6)
+# x[2][3] = 1
+# y[3][4] = True
+# y[2][3] = True
+# print(render_public(x, y))
