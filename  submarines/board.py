@@ -18,7 +18,21 @@ def count_remaining_ships(ships: list[list[int]], shots: list[list[bool]]) -> in
                     count_remaining += 1
     return count_remaining
 
-
+def render_public(ships: list[list[int]], shots: list[list[bool]]) -> str:
+    for i, j in enumerate(ships):
+        for idx, val in enumerate(j):
+            if val == 0:
+                if shots[i][idx]:
+                    shots[i][idx] = "X"
+                else:
+                    shots[i][idx] = "O"
+            else:
+                if shots[i][idx]:
+                    shots[i][idx] = "V"
+                else:
+                    shots[i][idx] = "O"
+    return f""" {ships}
+                {shots}"""
 
 
 
